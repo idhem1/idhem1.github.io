@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatzupp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/png" href="images/image-logo_whatzupp.png">
+    <meta name="robots" content="index, follow"> <!-- Balises meta pour l'optimisation des moteurs de recherche -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Balise meta pour définir l'encodage de caractères -->
+</head>
+
+<body onselectstart="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..message perso .. '; return true;" >
+    <div class="container">
+        <div class="conversations">
+            <div class="header">Conversations</div>
+            <div class="conversation">ミ⁠●⁠﹏⁠☉⁠ミ</div>
+            <div class="conversation"><a href="Nicolas.html">Nicolas</a></div>
+            <div class="conversation">John</div>
+            <div class="conversation">Jane Smith</div>
+            <div class="conversation">Alex</div>
+            <div class="conversation">Luca Nguyen</div>
+            <div class="conversation">Leila Chen</div>
+            <div class="conversation">Maya Rodriguez</div>
+            <div class="conversation">Sasha</div>
+            <div class="conversation">Fatima</div>
+            <div class="conversation">Papa</div>
+            <div class="conversation">Maman</div>
+
+        </div>
+
+        <div class="messages">
+            <div class="header">Messages avec [<strong>ミ⁠●⁠﹏⁠☉⁠ミ</strong>]</div>
+            <div class="message received">Bonjour, je vous propose de jouer à un petit jeu, vous et moi</div>
+            <div class="message sent">Quel genre de jeu ?</div>
+            <div class="message received">Je vous donnerais des petits defis, voyer ça comme un amusement entre nous</div>
+            <div class="message sent">Que devrais-je faire ? Qu'est ce que je gagne à vous écouter ?</div>
+            <div class="message received">Mon interet dans cette affaire ne vous concerne pas specialement, quand à vous, vous y gagnez un divertissement</br> 
+                en satisfaisant votre curiosité et vous obtiendrez eventuellement une surprise si vous arrivez au bout du jeu.</div>
+            <div class="message received">Nous avons un accord ?</div>
+            <div class="message sent">Je suis partant !</div>
+            <div class="message received">Commençons par cela, essayer de trouver un mot secret là dedans</div>
+            <div class="message received"><a href="https://www.ebay.com/itm/176281752144">https://www.ebay.com/itm/176281752144</a></div>
+            <!--<div class="message received">Bien, voilà votre premiere épreuve :</div>-->
+            <!--<img class="message received" src="images/image-premiere_epreuve.jpg" alt="Premiere epreuve !"/>-->
+            <div class="input-box" id="message_input">
+                <input type="text" placeholder="Type your message...">
+                <button id="send_button">Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 85 )) {
+            return false;
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var messageInput = document.getElementById("message_input").querySelector("input");
+            var sendButton = document.getElementById("send_button");
+
+            sendButton.addEventListener("click", function () {
+                var messageText = messageInput.value;
+                if (messageText.trim() !== "") {
+                    // Créer un élément de message et l'ajouter à la section des messages
+                    var messageContainer = document.createElement("div");
+                    messageContainer.className = "message sent";
+                    messageContainer.textContent = messageText;
+
+                    var messagesSection = document.querySelector(".messages");
+                    messagesSection.appendChild(messageContainer);
+
+                    // Effacer le champ de saisie
+                    messageInput.value = "";
+
+                    // Vérifier si le message doit provenir de Nicolas
+                    if (messageText.trim().toLowerCase()=== "musique") {
+                        var anonymeMessageContainer = document.createElement("div");
+                        anonymeMessageContainer.className = "message received";
+
+                        // Créer un lien avec le texte "Message envoyé de Nicolas" et l'URL spécifique
+                        var link = document.createElement("a");
+                        link.href = "https://youtu.be/4qxqeDCZi8M"
+                        link.textContent = "Felicitations, voici votre nouveau défi, vous me devez toujours un mot secret (sans majuscule): https://youtu.be/4qxqeDCZi8M";
+                        anonymeMessageContainer.appendChild(link);
+
+                        messagesSection.appendChild(anonymeMessageContainer);
+                    };
+                    if (messageText.trim().toLowerCase()=== "barnet lake") {
+                        var anonymeMessageContainer = document.createElement("div");
+                        anonymeMessageContainer.className = "message received";
+
+                        // Créer un lien avec le texte "Message envoyé de Nicolas" et l'URL spécifique
+                        var link = document.createElement("div");
+                        link.textContent = "Vous etes bon en vocabulaire ? Quel mot se trouve à la page 1187 du petit Robert ? Je suis sur que vous saurez vous débrouiller pour savoir le mot secret";
+                        anonymeMessageContainer.appendChild(link);
+                        messagesSection.appendChild(anonymeMessageContainer);
+
+                    };
+                    if (messageText.trim().toLowerCase()=== "messagerie") {
+                        var anonymeMessageContainer = document.createElement("div");
+                        anonymeMessageContainer.className = "message received";
+
+                        // Créer un lien avec le texte "Message envoyé de Nicolas" et l'URL spécifique
+                        var link = document.createElement("a");
+                        link.href = "https://www.instagram.com/the_cap_tain_rid/"
+                        link.textContent = "@the_cap_tain_rid";
+                        anonymeMessageContainer.appendChild(link);
+
+                        messagesSection.appendChild(anonymeMessageContainer);
+                    };
+                };
+            });
+        });
+    </script>
+</body>
+</html>

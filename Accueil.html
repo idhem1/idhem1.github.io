@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil du Jeu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:black;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #000000;
+        }
+        .start-button {
+            background-color: #000000;
+            border: none;
+            color: #000000;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .start-button:hover {
+            background-color: #ffffff;
+        }
+        .textbox {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur la premiere page</h1>
+        <p>Vous aller entre dans une experience immersive</p>
+        <input class="textbox" type="text" id="answerInput">
+        <button class="start-button" onclick="checkAnswer()">Commencer le Jeu</button>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var userAnswer = document.getElementById("answerInput").value.toLowerCase();
+            if (userAnswer === "startinggame") {
+                startGame();
+            } else {
+                alert("Mauvaise réponse.");
+            }
+        }
+
+        function startGame() {
+            // Code pour démarrer le jeu
+            console.log("Le jeu commence !");
+            // Redirection vers la page du jeu
+            window.location.href = "Nicolas.html";
+        }
+    </script>
+</body>
+</html>

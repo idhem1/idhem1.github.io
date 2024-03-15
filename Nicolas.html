@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatzupp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/png" href="images/image-logo_whatzupp.png">
+    <meta name="robots" content="index, follow"> <!-- Balises meta pour l'optimisation des moteurs de recherche -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Balise meta pour définir l'encodage de caractères -->
+    <script>
+        function verifierMot() {
+            var texte = document.getElementById('zone_texte').value;
+            var motCible = 'sages'; // Mot à détecter
+            
+            if(texte.includes(motCible)) {
+                document.getElementById('image').style.display = 'block'; // Afficher l'image si le mot est trouvé
+            } else {
+                document.getElementById('image').style.display = 'none'; // Cacher l'image si le mot n'est pas trouvé
+            }
+        }
+    
+        document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 85 )) {
+            return false;
+            }
+        };
+</script>
+    </script>
+</head>
+
+<body onselectstart="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..message perso .. '; return true;" >
+    <div class="container">
+        <div class="conversations">
+            <div class="header">Conversations</div>
+            <div class="conversation"><a href="Anonymous.html">?_?</a></div>
+            <div class="conversation">Nicolas</div>
+            <div class="conversation">John</div>
+            <div class="conversation">Jane Smith</div>
+            <div class="conversation">Alex</div>
+            <div class="conversation">Luca Nguyen</div>
+            <div class="conversation">Leila Chen</div>
+            <div class="conversation">Maya Rodriguez</div>
+            <div class="conversation">Sasha</div>
+            <div class="conversation">Fatima</div>
+            <div class="conversation">Papa</div>
+            <div class="conversation">Maman</div>
+
+        </div>
+
+        <div class="messages">
+            <div class="header">Messages avec [<strong>Nicolas</strong>]</div>
+            <div class="message received">Le truc de zizin !</div>
+            <div class="message received">Je rentrait apres mes courses et là y'a un gars qui vient me parler</div>
+            <div class="message received">Il etait habillé comme dans les films de SF, en costume noir, serieux et tout</div>
+            <div class="message received">Enfin bref j'etait pas à l'aise mais il me propose une offre</div>
+            <div class="message received">j'ai pense que tu serais aussi interressé donc je t'envoie le lien</div>
+            <div class="message received">il m'a dit de rester discret donc évite d'en parler</div>
+            <div class="message received">Il a déjà dû t'envoyer un message</div>
+            <div class="message sent">Oui je l'ai reçu</div>
+            <div class="input-box" id="message_input">
+                <input type="text" placeholder="Type your message...">
+                <button id="send_button">Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var messageInput = document.getElementById("message_input").querySelector("input");
+            var sendButton = document.getElementById("send_button");
+
+            sendButton.addEventListener("click", function () {
+                var messageText = messageInput.value;
+                if (messageText.trim() !== "") {
+                    // Créer un élément de message et l'ajouter à la section des messages
+                    var messageContainer = document.createElement("div");
+                    messageContainer.className = "message sent";
+                    messageContainer.textContent = messageText;
+
+                    var messagesSection = document.querySelector(".messages");
+                    messagesSection.appendChild(messageContainer);
+
+                    // Effacer le champ de saisie
+                    messageInput.value = "";
+                };  
+                if (messageText.trim().toLowerCase() === "fin des defis") {
+                    var nicolasMessageContainer = document.createElement("div");
+                    nicolasMessageContainer.className = "message received";
+                    nicolasMessageContainer.textContent = "Bravo à toi";
+                    messagesSection.appendChild(nicolasMessageContainer);
+
+                    var nicolasMessageContainer = document.createElement("div");
+                    nicolasMessageContainer.className = "message received";
+                    nicolasMessageContainer.textContent = "Pour ma part j'ai échoué...";
+                    messagesSection.appendChild(nicolasMessageContainer);
+
+                    var nicolasMessageContainer = document.createElement("div");
+                    nicolasMessageContainer.className = "message received";
+                    var imageElement = document.createElement("img");
+                    imageElement.src = "images/Rickrolling_QR_code.png";
+                    nicolasMessageContainer.appendChild(imageElement);
+                    messagesSection.appendChild(nicolasMessageContainer);
+
+                };
+            });
+        });
+    </script>
+</body>
+</html>
