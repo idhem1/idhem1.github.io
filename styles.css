@@ -122,5 +122,22 @@ h6 {
 }
 
 h1 {
-	text-align = center
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+.message-pas-suspect {
+	text-align: center;
+	text-shadow: #000000;
 }
