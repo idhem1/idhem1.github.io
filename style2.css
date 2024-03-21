@@ -31,3 +31,8 @@ body {
 a {
     text-align: center;
 }
+
+a:link {
+    align-self: center;
+    text-align: center;
+}
